@@ -1,0 +1,47 @@
+{
+  "name": "oled-service",
+  "version": "1.0.0",
+  "description": "OLED SERVICE — Учёт склада (офлайн)",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win"
+  },
+  "author": "OLED SERVICE",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.oledservice.app",
+    "productName": "OLED SERVICE",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "oled_service.html",
+      "icon.ico"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        },
+        {
+          "target": "portable",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
